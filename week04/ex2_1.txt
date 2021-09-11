@@ -1,0 +1,6 @@
+init-+-init---bash-+-ex2_1-+-ex2_1-+-ex2_1---ex2_1
+     |             |       |       `-ex2_1
+     |             |       |-ex2_1---ex2_1
+     |             |       `-ex2_1
+     |             `-pstree
+     `-{init}
