@@ -4,7 +4,7 @@
 int main(){
 char str[256];
 while (1){
-	gets(str);
+	fgets(str,255,stdin);
 	system(str);
 }
 }
