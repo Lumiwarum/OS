@@ -68,4 +68,5 @@ while (fscanf(fp,"%d,%d",&at[i],&bt[i])==2){
 sort(i);
 solve(i);
 printArray(i);
+fclose(fp);
 }
