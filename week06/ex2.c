@@ -66,7 +66,6 @@ while(1){
 		inQueue++;
 		if(currentAt==n){break;}
 	}
-	//printf("%d %d %d %d\n",started,time,inQueue,bt[queue[0]]);
 	if (started==-1){sortQueue();}
 	if ((started!=-1)&&((time-started)==bt[queue[0]])){
 		started=-1;
@@ -91,9 +90,12 @@ averageWT=averageWT/n;
 }
 
 int main(){
-at[0]=6;at[1]=4;at[2]=13;at[3]=10;at[4]=10;at[5]=2;
-bt[0]=4;bt[1]=1;bt[2]=4;bt[3]=2;bt[4]=3;bt[5]=1;
-sort(5);
-solve(5);
-printArray(5);
+int i=0;
+FILE *fp= fopen("input.csv","r");
+while (fscanf(fp,"%d,%d",&at[i],&bt[i])==2){
+	i++;
+}
+sort(i);
+solve(i);
+printArray(i);
 }

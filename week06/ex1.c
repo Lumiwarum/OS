@@ -60,9 +60,12 @@ averageWT=averageWT/n;
 }
 
 int main(){
-at[0]=1;at[1]=6;at[2]=4;at[3]=7;at[4]=6;at[5]=2;
-bt[0]=2;bt[1]=5;bt[2]=4;bt[3]=1;bt[4]=5;bt[5]=1;
-sort(4);
-solve(4);
-printArray(4);
+int i=0;
+FILE *fp=fopen("input.csv","r");
+while (fscanf(fp,"%d,%d",&at[i],&bt[i])==2){
+	i++;
+}
+sort(i);
+solve(i);
+printArray(i);
 }
