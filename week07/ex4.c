@@ -9,6 +9,7 @@ void* my_realloc(void* ptr,size_t size){
 	//cheking if there is no initial ptr to reallocate
 	if (ptr==NULL) {return new_ptr;}
 	memcpy(new_ptr,ptr,size);
+	free(ptr);
 	return new_ptr;
 }
 
