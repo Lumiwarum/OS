@@ -1,0 +1,6 @@
+Since virtual adresses are described using 16 bits we'll have 2^16 possible virtual 
+adresses. Then all of them are mapped to a particular page. Size of a page is 8KB,
+what is equal to 8*1024=8192 Bytes. In order to calculate how much instances we'll have
+we have to devide 2^16 by 8192. 2^16=65536 |=> 65536/8192=8
+
+ANSWER: we'll have 8 pages.

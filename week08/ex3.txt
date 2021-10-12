@@ -1,0 +1,4 @@
+There comes new process named ex2
+fields Virt and Res are both increasing till the end of the process. As mentioned in the 2nd task we have enough
+free memory,so we don't swap pages and therefore Virt and Res fields have the same (almost) value
+

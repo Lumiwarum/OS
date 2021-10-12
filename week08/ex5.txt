@@ -1,0 +1,5 @@
+Virtual memory represents needed memory for the program to work, however
+we're physicaly limited in memory, that can be used at the moment. Because of that
+we storing data, that doesn't needed for the program at the current moment
+outside and load it, if it does. Virtual memory cannot be less than physical since
+it would mean that we currently have more data, than the program actually proccessing.

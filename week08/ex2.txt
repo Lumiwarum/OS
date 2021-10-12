@@ -1,0 +1,5 @@
+Si and So fields are both at 0 value since there is enough free memory for allocating
+Work pf the program can be found by looking at values of "free" field each seconds 
+It changes, until the program is done
+
+
