@@ -63,6 +63,7 @@ int main(){
 		tryFind(pages,n,pageId);
 		ask++;
 	}
+	hits-=n;
 	printf("%d %d\n",hits,ask);
 	fclose(fin);
 }
