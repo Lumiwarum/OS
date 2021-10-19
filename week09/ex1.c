@@ -59,7 +59,7 @@ int main(){
 	int pageId;
 	while (fscanf(fin,"%d",&pageId)==1){
 		printMainMemory(pages,n);
-		printf("current page number  %d \n \n",pageId);
+		printf("current page number %d \n \n",pageId);
 		tryFind(pages,n,pageId);
 		ask++;
 	}
