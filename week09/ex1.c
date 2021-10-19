@@ -32,9 +32,9 @@ void tryFind(struct page* pages,int n,int pageId){
 	l++;
 	}
 	if (replace==-1){
-		int replace=0;
+		replace=0;
 		for (int j=1;j<n;j++){
-			if ((int)pages[j].counter < (int)pages[j-1].counter){
+			if ((int)pages[j].counter < (int)pages[replace].counter){
 				replace=j;
 			}
 		}
