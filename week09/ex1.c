@@ -6,12 +6,13 @@ struct page{
 int id;
 uint16_t counter;
 };
+
 int hits=0,ask=0;
+
 void printMainMemory(struct page* pages,int n){
 	for (int i=0;i<n;i++){
-		printf("i = %d id = %d %d\n",i,pages[i].id,(int)pages[i].counter);
+		printf("i = %d id = %d %d\n",i,pages[i].id,pages[i].counter);
 	}
-	printf("current page number ");
 }
 
 void shifting(struct page* pages,int n){
@@ -19,26 +20,27 @@ void shifting(struct page* pages,int n){
 		pages[j].counter >>=1;
 	}
 }
-void tryFind(struct page* pages,int n,int pageId){
-	int i=0;
-	while (i<n){
-		if ((pages[i].id==-1)||(pages[i].id==pageId)){
-			pages[i].id=pageId;
-			shifting(pages,n);
-			pages[i].counter |=1 << (16 - 1);
-			hits++;
-			return;
-		}
-	i++;
-	}
 
-	int replace=0;
-	for (int j=1;j<n;j++){
-		if ((int)pages[j].counter < (int)pages[j-1].counter){
-			replace=j;
-		}
-	}
+void tryFind(struct page* pages,int n,int pageId){
 	shifting(pages,n);
+	int l=0;
+	int replace=-1;
+	while (l<n){
+		if ((pages[l].id==-1)||(pages[l].id==pageId)){
+			replace=l;
+		}
+	l++;
+	}
+	if (replace==-1){
+		int replace=0;
+		for (int j=1;j<n;j++){
+			if ((int)pages[j].counter < (int)pages[j-1].counter){
+				replace=j;
+			}
+		}
+	} else {
+		hits++;
+	}
 	pages[replace].id=pageId;
 	pages[replace].counter=0;
 	pages[replace].counter |=1 << (16 - 1);
@@ -56,9 +58,9 @@ int main(){
 	scanf("%d",&n);
 	int pageId;
 	while (fscanf(fin,"%d",&pageId)==1){
-		tryFind(pages,n,pageId);
 		printMainMemory(pages,n);
-		printf("%d\n\n",pageId);
+		printf("current page number  %d \n \n",pageId);
+		tryFind(pages,n,pageId);
 		ask++;
 	}
 	printf("%d %d\n",hits,ask);
