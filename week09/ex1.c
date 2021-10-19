@@ -34,7 +34,7 @@ void tryFind(struct page* pages,int n,int pageId){
 	if (replace==-1){
 		replace=0;
 		for (int j=1;j<n;j++){
-			if ((int)pages[j].counter < (int)pages[replace].counter){
+			if ((int)pages[j].counter <= (int)pages[replace].counter){
 				replace=j;
 			}
 		}
@@ -59,11 +59,13 @@ int main(){
 	int pageId;
 	while (fscanf(fin,"%d",&pageId)==1){
 		printMainMemory(pages,n);
-		printf("current page number %d \n \n",pageId);
+		printf("current page number %d\n\n",pageId);
 		tryFind(pages,n,pageId);
 		ask++;
 	}
-	hits-=n;
-	printf("%d %d\n",hits,ask);
+	hits-=n;// cause we shouldn't count first n hits since they are just empty spaces
+	ask=ask-hits;
+	double ratio=(double)hits/(double)ask;
+	printf("hit = %d miss = %d ratio = %f\n",hits,ask,ratio);
 	fclose(fin);
 }

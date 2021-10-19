@@ -1,0 +1,5 @@
+In order to increase hit/miss ratio we have to sort referencing pages. That would increase hit ratio since if a page
+referenced multiple times, it would be referenced after itself, so every time after the first one we'll have a hit.
+In order to decrease hit/miss ratio (even make it 0 if there is enough different pages being referenced) we have to
+make the sequence "unrepeatable".By this I mean that the same page will not be referenced again at least after N
+pages, where N is the number of avaliavable page frames initially.
