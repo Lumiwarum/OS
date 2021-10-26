@@ -1,0 +1,16 @@
+Initial permissions of the file
+-rwxrwxrwx 1 lumi lumi 14 Oct 26 20:06 _ex3.txt
+
+Removing execute permission for everyone
+-rw-rw-rw- 1 lumi lumi 14 Oct 26 20:06 _ex3.txt
+
+Granting all permissions for owner and others
+-rwxrw-rwx 1 lumi lumi 14 Oct 26 20:06 _ex3.txt
+
+ Group permissions now are equal to user permissions
+-rwxrwxrwx 1 lumi lumi 14 Oct 26 20:06 _ex3.txt
+
+ ANSWER:
+chmod 660 ex3.txt Sets permissions for ex3.txt such that user and groups can read&write, others cannot do anything
+chmod 770 ex3.txt Grant all permissions of ex3.txt to everyone, except write for others
+chmod 777 ex3.txt Grant all permissions of ex3.txt to everyone
