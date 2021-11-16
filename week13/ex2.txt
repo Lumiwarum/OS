@@ -1,0 +1,19 @@
+Avoidance
+This strategy based on concepts of safe and unsafe states. OS gives resources
+in such way, that is not goes to an unsafe state. This strategy allow to avoid
+deadlock, however it requires in advance information about maximum resource 
+needs for each process, what in practice is not always the case.
+Prevention
+There are 4 condintions in order for deadlock to occur. This strategy based on 
+idea, that if one of the conditions is never met then no deadlock can occur. 
+All 4 conditions have approach to prevent them, however there are some prob-
+lems. For example when we attacking the Circular wait condition we can order 
+resources numerically, but it's not always possible to find an ordering that
+satisfies everyone.
+Recovery
+This strategyworks when we detecting a deadlock ( so first we have to detect
+it). This strategy is good when it's hard to prevent or avoid deadlock however,
+it has disadvantages.For example,one of the way to recover from deadlock is to
+kill a process,but in that case we have to find such process that will help to
+escape from a deadlock and such process is better to be rerunnable from the 
+begining without ill effects( what is not always the case).  
